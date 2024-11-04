@@ -1,7 +1,11 @@
 import userData from '../fixtures/users/userData.json'
-import LoginPage from '../pages/loginPage.js'
+import LoginPage from '../pages/loginPage'
+import DashboardPage from '../pages/dashboardPage'
+import MenuPage from '../pages/MenuPage'
 
 const loginPage = new LoginPage ()
+const dasboardPage = new DashboardPage ()
+const menuPage = new MenuPage ()
 describe('Orange HRM Tests', () => {
   const selectorsList = {
     dashboardGrid: ".oxd-layout-context",
@@ -14,7 +18,9 @@ describe('Orange HRM Tests', () => {
 
   it.only('User Info Update - success', () => {
     loginPage.accessLoginPage()
-    loginPage.loginWithUser(userData.userSuccess.username, userData.userSuccess.password)
+    loginPage.loginWithAnyUser(userData.userSuccess.username, userData.userSuccess.password)
+    dasboardPage.checkDashboardPage()
+    menuPage.accessMyInfo()
   })
   it('Login - Fail', () => {
     cy.visit('/auth/login')
