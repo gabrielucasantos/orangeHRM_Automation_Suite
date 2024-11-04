@@ -20,6 +20,8 @@ class MenuPage {
         cy.get(this.selectorsList().pimMenu).click()
     }
 
+    
+
 
 }
 
