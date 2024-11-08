@@ -39,7 +39,6 @@ class MyInfoPage {
         cy.get(this.selectorsList().thirdItemCombobox).click()
         cy.get(this.selectorsList().dataField).eq(1).clear().type(dateOfBirth)
         cy.get(this.selectorsList().fielRadio).eq(0).click()
-
     }
 
     saveForm() {

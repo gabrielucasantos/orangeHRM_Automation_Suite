@@ -20,4 +20,10 @@ describe('Login Orange HRM Tests', () => {
     dashboardPage.checkDashboardPage()
   }) 
 
+  it('Logout', () => {
+    loginPage.accessLoginPage()
+    loginPage.loginWithAnyUser(userData.userSuccess.username, userData.userSuccess.password)
+    dashboardPage.checkDashboardPage()
+    dashboardPage.logoutPage()
+  })
 })
